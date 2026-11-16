@@ -137,7 +137,7 @@ export function Portfolio() {
                   </ul>
                 </div>
 
-                <Button asChild variant="hero" size="xl" className="mt-10 md:mt-auto">
+                <Button asChild variant="hero" size="xl" className="mt-10">
                   <a href="#contact" onClick={() => setActive(null)}>
                     Start a similar project
                   </a>
