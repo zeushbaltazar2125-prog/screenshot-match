@@ -25,13 +25,14 @@ export const site = {
 
 /** Replace every placeholder below with your real details. */
 export const contact = {
-  email: "hello@yourdomain.com",
+  email: "zeushbaltazar2125@gmail.com",
   links: [
-    { label: "Email", value: "hello@yourdomain.com", href: "mailto:hello@yourdomain.com" },
-    { label: "LinkedIn", value: "linkedin.com/in/your-profile", href: "https://www.linkedin.com/in/your-profile" },
-    { label: "Facebook", value: "facebook.com/your-page", href: "https://www.facebook.com/your-page" },
-    { label: "WhatsApp", value: "+00 000 000 0000", href: "https://wa.me/0000000000" },
-    { label: "Upwork", value: "upwork.com/freelancers/your-profile", href: "https://www.upwork.com/freelancers/your-profile" },
+    { label: "Email", value: "zeushbaltazar2125@gmail.com", href: "mailto:zeushbaltazar2125@gmail.com" },
+    { label: "LinkedIn", value: "linkedin.com/in/adam-zeush-a4a9a2253", href: "https://www.linkedin.com/in/adam-zeush-a4a9a2253/" },
+    { label: "Facebook", value: "facebook.com/tomienotalive", href: "https://www.facebook.com/tomienotalive/" },
+    { label: "WhatsApp", value: "+63 960 219 1582", href: "https://wa.me/639602191582" },
+    // TODO: replace with the Freelancer.com profile link (currently the Facebook link, as provided)
+    { label: "Freelancer.com", value: "Freelancer.com profile", href: "https://www.facebook.com/tomienotalive/" },
   ],
 };
 
