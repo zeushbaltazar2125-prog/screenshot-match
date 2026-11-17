@@ -5,15 +5,21 @@
  *  lives here, so you rarely need to touch the components.
  * ─────────────────────────────────────────────────────────────
  */
-import workCanvaPosts from "@/assets/work-canva-posts.jpg";
 import workBrandKit from "@/assets/work-brand-kit.jpg";
 import workSocialFeed from "@/assets/work-social-feed.jpg";
 import workInbox from "@/assets/work-inbox.jpg";
 import workAdmin from "@/assets/work-admin.jpg";
-import workDataSheet from "@/assets/work-data-sheet.jpg";
 import workWebsite from "@/assets/work-website.jpg";
 import workSupport from "@/assets/work-support.jpg";
 import workResearch from "@/assets/work-research.jpg";
+import posterTattoo from "@/assets/poster-tattoo-studio.png.asset.json";
+import posterGig from "@/assets/poster-gig-event.png.asset.json";
+import dataInventory from "@/assets/data-inventory-sheet.png.asset.json";
+import dataCustomers from "@/assets/data-customer-database.png.asset.json";
+import dataLeads from "@/assets/data-lead-database.png.asset.json";
+
+const dataEntryDisclaimer =
+  "These are only sample works I have found on the internet, none of the details provided are real. They are only fictional.";
 
 export const site = {
   name: "Adam Zeush Baltazar",
@@ -101,6 +107,10 @@ export type Project = {
   title: string;
   category: PortfolioCategory;
   image: string;
+  /** Extra images shown in the project pop-up (optional). */
+  gallery?: string[];
+  /** Shown on the card and in the pop-up (optional). */
+  disclaimer?: string;
   summary: string;
   description: string;
   deliverables: string[];
@@ -116,10 +126,11 @@ export const projects: Project[] = [
     id: "minimal-social-post-set",
     title: "Minimal Social Post Set",
     category: "Canva Graphic Designs",
-    image: workCanvaPosts,
-    summary: "A cohesive set of square posts built on a bold geometric style.",
-    description: "Sample project. A series of social media posts designed in Canva around a strict black-and-white geometric style, saved as editable templates so new posts can be produced in minutes.",
-    deliverables: ["3 post designs", "Editable Canva templates", "Export in feed and story sizes"],
+    image: posterTattoo.url,
+    gallery: [posterTattoo.url, posterGig.url],
+    summary: "Promotional posters for a tattoo studio and a local skate & music event.",
+    description: "Two promotional posters designed in Canva: one for a tattoo and piercing studio showcasing its work and location, and one for a skate competition and gig with schedules, prizes and the band line-up.",
+    deliverables: ["Tattoo studio promo poster", "Event / gig poster", "Print and social-ready exports"],
     tools: ["Canva"],
   },
   {
@@ -163,14 +174,37 @@ export const projects: Project[] = [
     tools: ["Google Drive", "Google Docs"],
   },
   {
-    id: "lead-list-cleanup",
-    title: "Lead List Clean-up",
+    id: "inventory-management-sheet",
+    title: "Inventory Management Sheet",
     category: "Data Entry Samples",
-    image: workDataSheet,
-    summary: "A messy contact list cleaned, standardised and de-duplicated.",
-    description: "Sample project. A spreadsheet of contacts cleaned up — duplicates removed, names and phone numbers standardised, missing details researched and flagged.",
-    deliverables: ["Cleaned spreadsheet", "Duplicate report", "Data entry checklist"],
-    tools: ["Google Sheets", "Microsoft Excel"],
+    image: dataInventory.url,
+    disclaimer: dataEntryDisclaimer,
+    summary: "Product inventory with prices, stock totals and status flags.",
+    description: "A product inventory tracker in Google Sheets with unit prices, stock quantities, automatic total values and colour-coded stock status (in stock, low stock, out of stock).",
+    deliverables: ["Structured product list", "Total value formulas", "Conditional stock status"],
+    tools: ["Google Sheets"],
+  },
+  {
+    id: "customer-database",
+    title: "Customer Database",
+    category: "Data Entry Samples",
+    image: dataCustomers.url,
+    disclaimer: dataEntryDisclaimer,
+    summary: "Customer records with contact details and order status tracking.",
+    description: "A customer database in Google Sheets with IDs, names, emails, phone numbers and cities, plus a drop-down order status (completed, pending, shipped, processing).",
+    deliverables: ["Clean customer records", "Order status drop-downs", "Filter-ready columns"],
+    tools: ["Google Sheets"],
+  },
+  {
+    id: "lead-generation-database",
+    title: "Lead Generation Database",
+    category: "Data Entry Samples",
+    image: dataLeads.url,
+    disclaimer: dataEntryDisclaimer,
+    summary: "Business leads organised by industry, contact and lead status.",
+    description: "A lead generation list in Google Sheets with company names, industries, websites, contact people, emails, locations and a colour-coded lead status pipeline.",
+    deliverables: ["Researched lead list", "Lead status pipeline", "Linked websites"],
+    tools: ["Google Sheets"],
   },
   {
     id: "product-landing-page",

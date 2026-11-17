@@ -2,7 +2,9 @@ import { ArrowDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { site } from "@/content/site";
 import heroMain from "@/assets/work-website.jpg";
-import heroSecondary from "@/assets/work-canva-posts.jpg";
+import heroSecondaryAsset from "@/assets/poster-tattoo-studio.png.asset.json";
+
+const heroSecondary = heroSecondaryAsset.url;
 
 const qualities = ["Dedicated", "Organised", "Adaptable", "Remote-ready"];
 
@@ -69,11 +71,11 @@ export function Hero() {
             <div className="absolute -bottom-10 -left-6 hidden w-48 overflow-hidden rounded-lg border-4 border-background shadow-lift sm:block lg:-left-12 lg:w-56">
               <img
                 src={heroSecondary}
-                alt="Sample Canva social post designs"
+                alt="Promotional poster designed in Canva"
                 width={1200}
                 height={912}
                 loading="lazy"
-                className="aspect-square w-full object-cover"
+                className="aspect-[3/4] w-full object-cover object-top"
               />
             </div>
             <a
