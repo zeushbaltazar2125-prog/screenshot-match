@@ -36,7 +36,7 @@ export function Contact() {
       });
       return;
     }
-    setStatus({ kind: "success", name: values.full_name.split(" ")[0] });
+    setStatus({ kind: "success", name: values.full_name.split(" ")[0] ?? values.full_name });
     reset();
   };
 
@@ -176,8 +176,8 @@ function Field({
 }: {
   id: string;
   label: string;
-  error?: string;
-  className?: string;
+  error?: string | undefined;
+  className?: string | undefined;
   children: React.ReactNode;
 }) {
   return (
