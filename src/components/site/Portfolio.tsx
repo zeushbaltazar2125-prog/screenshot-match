@@ -101,7 +101,7 @@ export function Portfolio() {
         <DialogContent className="max-h-[92vh] max-w-5xl gap-0 overflow-y-auto p-0 sm:rounded-lg">
           {active ? (
             <div className="grid md:grid-cols-5">
-              <ProjectGallery project={active} />
+              <ProjectGallery key={active.id} project={active} />
               <div className="flex flex-col p-7 sm:p-9 md:col-span-2">
                 <p className="eyebrow">{active.category}</p>
                 <DialogTitle className="display mt-3 text-4xl font-normal">{active.title}</DialogTitle>
