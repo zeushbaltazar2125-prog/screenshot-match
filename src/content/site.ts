@@ -31,8 +31,7 @@ export const contact = {
     { label: "LinkedIn", value: "linkedin.com/in/adam-zeush-a4a9a2253", href: "https://www.linkedin.com/in/adam-zeush-a4a9a2253/" },
     { label: "Facebook", value: "facebook.com/tomienotalive", href: "https://www.facebook.com/tomienotalive/" },
     { label: "WhatsApp", value: "+63 960 219 1582", href: "https://wa.me/639602191582" },
-    // TODO: replace with the Freelancer.com profile link (currently the Facebook link, as provided)
-    { label: "Freelancer.com", value: "Freelancer.com profile", href: "https://www.facebook.com/tomienotalive/" },
+    { label: "Freelancer", value: "freelancer.com/u/zeushadam", href: "https://www.freelancer.com/u/zeushadam" },
   ],
 };
 
