@@ -75,7 +75,7 @@ export function Portfolio() {
                     width={1200}
                     height={912}
                     loading="lazy"
-                    className="aspect-[4/3] w-full object-cover grayscale transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    className="aspect-[4/3] w-full object-cover object-top grayscale transition-all duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0"
                   />
                   <span className="absolute right-3 top-3 flex h-10 w-10 translate-y-1 items-center justify-center rounded-full bg-background text-foreground opacity-0 shadow-soft transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                     <ArrowUpRight className="h-4 w-4" />
@@ -86,6 +86,9 @@ export function Portfolio() {
                     <p className="eyebrow">{project.category}</p>
                     <h3 className="mt-2 text-xl font-medium">{project.title}</h3>
                     <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{project.summary}</p>
+                    {project.disclaimer ? (
+                      <p className="mt-2 text-xs italic text-muted-foreground">Fictional sample data.</p>
+                    ) : null}
                   </div>
                 </div>
               </button>
@@ -98,21 +101,20 @@ export function Portfolio() {
         <DialogContent className="max-h-[92vh] max-w-5xl gap-0 overflow-y-auto p-0 sm:rounded-lg">
           {active ? (
             <div className="grid md:grid-cols-5">
-              <div className="bg-muted md:col-span-3">
-                <img
-                  src={active.image}
-                  alt={active.title}
-                  width={1200}
-                  height={912}
-                  className="h-full w-full object-cover"
-                />
-              </div>
+              <ProjectGallery project={active} />
               <div className="flex flex-col p-7 sm:p-9 md:col-span-2">
                 <p className="eyebrow">{active.category}</p>
                 <DialogTitle className="display mt-3 text-4xl font-normal">{active.title}</DialogTitle>
                 <DialogDescription className="mt-4 text-base leading-relaxed text-muted-foreground">
                   {active.description}
                 </DialogDescription>
+
+                {active.disclaimer ? (
+                  <p role="note" className="mt-6 rounded-md border border-border bg-muted px-4 py-3 text-sm leading-relaxed text-muted-foreground">
+                    <span className="font-medium text-foreground">Disclaimer: </span>
+                    {active.disclaimer}
+                  </p>
+                ) : null}
 
                 <div className="mt-8">
                   <p className="eyebrow">Deliverables</p>
@@ -148,5 +150,41 @@ export function Portfolio() {
         </DialogContent>
       </Dialog>
     </section>
+  );
+}
+
+function ProjectGallery({ project }: { project: Project }) {
+  const images = project.gallery?.length ? project.gallery : [project.image];
+  const [index, setIndex] = useState(0);
+  const current = images[index] ?? project.image;
+  return (
+    <div className="flex flex-col bg-muted md:col-span-3">
+      <div className="flex flex-1 items-center justify-center">
+        <img
+          src={current}
+          alt={`${project.title} — image ${index + 1} of ${images.length}`}
+          className="max-h-[70vh] w-full object-contain"
+        />
+      </div>
+      {images.length > 1 ? (
+        <div className="flex gap-2 border-t border-border p-3">
+          {images.map((src, i) => (
+            <button
+              key={src}
+              type="button"
+              onClick={() => setIndex(i)}
+              aria-label={`Show image ${i + 1}`}
+              aria-current={i === index}
+              className={cn(
+                "h-16 w-16 overflow-hidden rounded-md border-2 transition-all",
+                i === index ? "border-foreground" : "border-transparent opacity-60 hover:opacity-100",
+              )}
+            >
+              <img src={src} alt="" className="h-full w-full object-cover object-top" />
+            </button>
+          ))}
+        </div>
+      ) : null}
+    </div>
   );
 }
