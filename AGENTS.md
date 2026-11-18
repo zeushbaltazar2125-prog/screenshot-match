@@ -34,3 +34,4 @@ use the editor.
 - All visitor-facing content (name, contact links, services, tools, portfolio projects) lives in `src/content/site.ts`; components only render it, so the owner can edit one file.
 - The site is a single scrolling page (`src/routes/index.tsx`) composed of section components in `src/components/site/`; navigation uses in-page anchors because the brief asked for smooth scrolling.
 - The contact form inserts into `public.contact_messages` from the browser client under an insert-only RLS policy; validation lives in `src/lib/contact-schema.ts` and mirrors the table's length constraints. No email is sent, so the success copy must say "received", never "emailed".
+- Site images must be real files in `src/assets/` imported as ES modules (Vite bundles them); never use `.asset.json` CDN pointers, because their `/__l5e/` URLs only resolve on Lovable hosting and the site is also deployed to Netlify.

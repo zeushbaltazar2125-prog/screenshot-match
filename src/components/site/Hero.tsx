@@ -2,9 +2,7 @@ import { ArrowDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { site } from "@/content/site";
 import heroMain from "@/assets/work-website.jpg";
-import heroSecondaryAsset from "@/assets/poster-tattoo-studio.png.asset.json";
-
-const heroSecondary = heroSecondaryAsset.url;
+import heroSecondary from "@/assets/poster-tattoo-studio.webp";
 
 const qualities = ["Dedicated", "Organised", "Adaptable", "Remote-ready"];
 
@@ -72,8 +70,8 @@ export function Hero() {
               <img
                 src={heroSecondary}
                 alt="Promotional poster designed in Canva"
-                width={1200}
-                height={912}
+                width={1358}
+                height={1920}
                 loading="lazy"
                 className="aspect-[3/4] w-full object-cover object-top"
               />

@@ -12,11 +12,11 @@ import workAdmin from "@/assets/work-admin.jpg";
 import workWebsite from "@/assets/work-website.jpg";
 import workSupport from "@/assets/work-support.jpg";
 import workResearch from "@/assets/work-research.jpg";
-import posterTattoo from "@/assets/poster-tattoo-studio.png.asset.json";
-import posterGig from "@/assets/poster-gig-event.png.asset.json";
-import dataInventory from "@/assets/data-inventory-sheet.png.asset.json";
-import dataCustomers from "@/assets/data-customer-database.png.asset.json";
-import dataLeads from "@/assets/data-lead-database.png.asset.json";
+import posterTattoo from "@/assets/poster-tattoo-studio.webp";
+import posterGig from "@/assets/poster-gig-event.webp";
+import dataInventory from "@/assets/data-inventory-sheet.png";
+import dataCustomers from "@/assets/data-customer-database.png";
+import dataLeads from "@/assets/data-lead-database.png";
 
 const dataEntryDisclaimer =
   "These are only sample works I have found on the internet, none of the details provided are real. They are only fictional.";
@@ -126,8 +126,8 @@ export const projects: Project[] = [
     id: "minimal-social-post-set",
     title: "Minimal Social Post Set",
     category: "Canva Graphic Designs",
-    image: posterTattoo.url,
-    gallery: [posterTattoo.url, posterGig.url],
+    image: posterTattoo,
+    gallery: [posterTattoo, posterGig],
     summary: "Promotional posters for a tattoo studio and a local skate & music event.",
     description: "Two promotional posters designed in Canva: one for a tattoo and piercing studio showcasing its work and location, and one for a skate competition and gig with schedules, prizes and the band line-up.",
     deliverables: ["Tattoo studio promo poster", "Event / gig poster", "Print and social-ready exports"],
@@ -177,7 +177,7 @@ export const projects: Project[] = [
     id: "inventory-management-sheet",
     title: "Inventory Management Sheet",
     category: "Data Entry Samples",
-    image: dataInventory.url,
+    image: dataInventory,
     disclaimer: dataEntryDisclaimer,
     summary: "Product inventory with prices, stock totals and status flags.",
     description: "A product inventory tracker in Google Sheets with unit prices, stock quantities, automatic total values and colour-coded stock status (in stock, low stock, out of stock).",
@@ -188,7 +188,7 @@ export const projects: Project[] = [
     id: "customer-database",
     title: "Customer Database",
     category: "Data Entry Samples",
-    image: dataCustomers.url,
+    image: dataCustomers,
     disclaimer: dataEntryDisclaimer,
     summary: "Customer records with contact details and order status tracking.",
     description: "A customer database in Google Sheets with IDs, names, emails, phone numbers and cities, plus a drop-down order status (completed, pending, shipped, processing).",
@@ -199,7 +199,7 @@ export const projects: Project[] = [
     id: "lead-generation-database",
     title: "Lead Generation Database",
     category: "Data Entry Samples",
-    image: dataLeads.url,
+    image: dataLeads,
     disclaimer: dataEntryDisclaimer,
     summary: "Business leads organised by industry, contact and lead status.",
     description: "A lead generation list in Google Sheets with company names, industries, websites, contact people, emails, locations and a colour-coded lead status pipeline.",
